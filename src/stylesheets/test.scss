@@ -1,0 +1,8 @@
+$test_var: #ffffff;
+
+body {
+  background: $test_var;
+  & h1 {
+    color: red;
+  }
+}

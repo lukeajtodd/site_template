@@ -24,4 +24,9 @@ gulp.task('tag', function () {
     .pipe(plugins.tagVersion())
 });
 
+gulp.task('default', function () {
+  gulp.watch('./src/stylesheets/**/*.scss', [ 'sass' ]);
+  gulp.watch('./src/scripts/**/*.ts', [ 'ts' ]);
+});
+
 gulp.task('build', [ 'sass', 'ts', 'bump', 'tag' ]);
