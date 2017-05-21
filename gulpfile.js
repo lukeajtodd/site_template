@@ -17,10 +17,6 @@ gulp.task('bump', function () {
   gulp.src('./package.json')
     .pipe(plugins.bump({ type: 'minor' }))
     .pipe(gulp.dest('./'))
-});
-
-gulp.task('tag', function () {
-  return gulp.src([ './package.json' ])
     .pipe(plugins.tagVersion())
 });
 
@@ -29,4 +25,4 @@ gulp.task('default', function () {
   gulp.watch('./src/scripts/**/*.ts', [ 'ts' ]);
 });
 
-gulp.task('build', [ 'sass', 'ts', 'bump', 'tag' ]);
+gulp.task('build', [ 'sass', 'ts', 'bump' ]);
