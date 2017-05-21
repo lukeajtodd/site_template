@@ -4,13 +4,13 @@ var plugins = require('gulp-load-plugins')();
 gulp.task('sass', function () {
   gulp.src('./src/stylesheets/**/*.scss')
     .pipe(plugins.sass().on('error', plugins.sass.logError))
-    .pipe(gulp.dest('./public/css/'))
+    .pipe(gulp.dest('./docs/css/'))
 });
 
 gulp.task('ts', function () {
   gulp.src('./src/scripts/**/*.ts')
     .pipe(plugins.typescript())
-    .pipe(gulp.dest('./public/js/'))
+    .pipe(gulp.dest('./docs/js/'))
 });
 
 gulp.task('bump', function () {
